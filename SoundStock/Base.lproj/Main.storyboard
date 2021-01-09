@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ホーム-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SoundStock" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,11 +21,13 @@
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="300"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wv-P6-eiG">
-                                <rect key="frame" x="328" y="44" width="86" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wv-P6-eiG">
+                                <rect key="frame" x="360" y="59" width="39" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" image="mail.stack" catalog="system">
                                     <color key="titleColor" systemColor="systemPinkColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
                                 <connections>
                                     <segue destination="u2g-cx-Pv0" kind="show" id="Opj-Ea-8j3"/>
@@ -35,20 +37,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Wv-P6-eiG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="22S-Vv-xWV"/>
-                            <constraint firstItem="4Wv-P6-eiG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="C1i-hA-2xy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wv-P6-eiG" secondAttribute="trailing" id="HlR-Xu-40o"/>
                             <constraint firstItem="HSh-mI-SWO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nua-34-j9P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wv-P6-eiG" secondAttribute="trailing" constant="15" id="U4Y-5W-gbM"/>
                             <constraint firstItem="HSh-mI-SWO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oDG-VP-JL0"/>
+                            <constraint firstItem="4Wv-P6-eiG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="v1V-ib-sD9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ltV-VS-1Zw"/>
+                    <navigationItem key="navigationItem" title="ホーム" id="ltV-VS-1Zw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1810.144927536232" y="122.28260869565219"/>
         </scene>
-        <!--View Controller-->
+        <!--新しいセットを作成-->
         <scene sceneID="ATo-k4-FIA">
             <objects>
                 <viewController id="u2g-cx-Pv0" sceneMemberID="viewController">
@@ -58,7 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="yz6-yk-OXn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WhV-vp-iiH"/>
+                    <navigationItem key="navigationItem" title="新しいセットを作成" id="I0B-i4-qOe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKz-D6-Lpz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,18 +68,75 @@
         <!--play-->
         <scene sceneID="nO7-Je-IfT">
             <objects>
-                <viewController id="PAX-Ox-dMQ" sceneMemberID="viewController">
+                <viewController id="PAX-Ox-dMQ" customClass="PlayerViewController" customModule="SoundStock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Yi-H3-vLu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhS-w9-Zrv">
+                                <rect key="frame" x="361" y="609" width="33" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="▶︎">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドのハンドベル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKh-Ms-ICh">
+                                <rect key="frame" x="101" y="1433" width="212" height="36"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7m-yK-Skq">
+                                <rect key="frame" x="161" y="86" width="92" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="押す"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alr-ny-ilV">
+                                <rect key="frame" x="20" y="609" width="33" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="◀︎">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell1.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-vr-tGr">
+                                <rect key="frame" x="50" y="163" width="314" height="410"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="410" id="347-u2-LT9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="ドのハンドベル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-ms-2nL">
+                                <rect key="frame" x="77" y="621" width="260" height="36"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YG0-85-TeH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YG0-85-TeH" firstAttribute="trailing" secondItem="dhS-w9-Zrv" secondAttribute="trailing" constant="20" id="CnN-hd-OFY"/>
+                            <constraint firstItem="dhS-w9-Zrv" firstAttribute="leading" secondItem="uwk-ms-2nL" secondAttribute="trailing" constant="24" id="L37-nm-4c8"/>
+                            <constraint firstItem="LwT-vr-tGr" firstAttribute="leading" secondItem="YG0-85-TeH" secondAttribute="leading" constant="50" id="MLN-nS-ZZ7"/>
+                            <constraint firstItem="YG0-85-TeH" firstAttribute="bottom" secondItem="dhS-w9-Zrv" secondAttribute="bottom" constant="18" id="Q9F-kf-TOf"/>
+                            <constraint firstItem="alr-ny-ilV" firstAttribute="leading" secondItem="YG0-85-TeH" secondAttribute="leading" constant="20" id="aNq-Pj-oOB"/>
+                            <constraint firstItem="uwk-ms-2nL" firstAttribute="leading" secondItem="alr-ny-ilV" secondAttribute="trailing" constant="24" id="bIG-O1-CLm"/>
+                            <constraint firstItem="YG0-85-TeH" firstAttribute="bottom" secondItem="uwk-ms-2nL" secondAttribute="bottom" constant="30" id="c69-32-WCd"/>
+                            <constraint firstItem="LwT-vr-tGr" firstAttribute="centerX" secondItem="yKh-Ms-ICh" secondAttribute="centerX" id="dRR-a4-Mpr"/>
+                            <constraint firstItem="yKh-Ms-ICh" firstAttribute="top" secondItem="0Yi-H3-vLu" secondAttribute="top" constant="1433" id="edh-yZ-vB1"/>
+                            <constraint firstItem="YG0-85-TeH" firstAttribute="bottom" secondItem="alr-ny-ilV" secondAttribute="bottom" constant="18" id="izI-ng-2jo"/>
+                            <constraint firstItem="LwT-vr-tGr" firstAttribute="centerY" secondItem="0Yi-H3-vLu" secondAttribute="centerY" id="mzg-Mx-TsD"/>
+                            <constraint firstItem="YG0-85-TeH" firstAttribute="trailing" secondItem="LwT-vr-tGr" secondAttribute="trailing" constant="50" id="rRe-gG-UJn"/>
+                            <constraint firstItem="yKh-Ms-ICh" firstAttribute="leading" secondItem="0Yi-H3-vLu" secondAttribute="leadingMargin" constant="81" id="uuv-FW-QnZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="play" image="play.circle" catalog="system" id="YYx-7C-sB2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5l6-cS-5nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="845"/>
+            <point key="canvasLocation" x="902.89855072463774" y="844.56521739130437"/>
         </scene>
         <!--more-->
         <scene sceneID="p86-QQ-TCv">
@@ -116,11 +174,11 @@
             </objects>
             <point key="canvasLocation" x="7" y="845"/>
         </scene>
-        <!--make-->
+        <!--home-->
         <scene sceneID="J2m-Zq-a33">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hL3-m3-5cZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="make" image="square.and.pencil" catalog="system" id="r6f-XA-rWK"/>
+                    <tabBarItem key="tabBarItem" title="home" image="homekit" catalog="system" id="r6f-XA-rWK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jHY-v9-gOV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -137,15 +195,26 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell1.png" width="1536" height="2048"/>
         <image name="cloud.bolt" catalog="system" width="128" height="128"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="mail.stack" catalog="system" width="128" height="122"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableCellGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
