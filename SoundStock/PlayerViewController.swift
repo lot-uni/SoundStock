@@ -25,7 +25,7 @@ class PlayerViewController: UIViewController {
     
     var soundName : String!
     
-//音のインスタンスを作成
+//音のインスタンスを作成　くそーーーー
 //    let SinePlayer = try! AVAudioPlayer(data: NSDataAsset(name: "mens-ou1")!.data)
     
     override func viewDidLoad() {
