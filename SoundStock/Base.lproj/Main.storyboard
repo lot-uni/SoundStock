@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="2826.0869565217395" y="121.46739130434784"/>
         </scene>
-        <!--play-->
+        <!--Play-->
         <scene sceneID="nO7-Je-IfT">
             <objects>
                 <viewController id="PAX-Ox-dMQ" customClass="PlayerViewController" customModule="SoundStock" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,6 +79,9 @@
                                 <state key="normal" title="▶︎">
                                     <color key="titleColor" systemColor="systemTealColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="After" destination="PAX-Ox-dMQ" eventType="touchUpInside" id="aX0-fz-1pS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ドのハンドベル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKh-Ms-ICh">
                                 <rect key="frame" x="101" y="1433" width="212" height="36"/>
@@ -87,25 +90,16 @@
                                 <color key="textColor" systemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7m-yK-Skq">
-                                <rect key="frame" x="161" y="86" width="92" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="押す"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alr-ny-ilV">
                                 <rect key="frame" x="20" y="609" width="33" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="◀︎">
                                     <color key="titleColor" systemColor="systemTealColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="before" destination="PAX-Ox-dMQ" eventType="touchUpInside" id="rvp-NY-sOS"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell1.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-vr-tGr">
-                                <rect key="frame" x="50" y="163" width="314" height="410"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="410" id="347-u2-LT9"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="ドのハンドベル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-ms-2nL">
                                 <rect key="frame" x="77" y="621" width="260" height="36"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -113,26 +107,47 @@
                                 <color key="textColor" systemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell1.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-vr-tGr">
+                                <rect key="frame" x="50" y="163" width="314" height="410"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="410" id="347-u2-LT9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lch-Ay-yHZ">
+                                <rect key="frame" x="50" y="163" width="314" height="410"/>
+                                <connections>
+                                    <action selector="play" destination="PAX-Ox-dMQ" eventType="touchUpInside" id="vUW-4t-sjy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YG0-85-TeH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YG0-85-TeH" firstAttribute="trailing" secondItem="Lch-Ay-yHZ" secondAttribute="trailing" constant="50" id="0Md-G4-dyv"/>
+                            <constraint firstItem="uwk-ms-2nL" firstAttribute="top" secondItem="Lch-Ay-yHZ" secondAttribute="bottom" constant="48" id="1Mc-83-YdL"/>
                             <constraint firstItem="YG0-85-TeH" firstAttribute="trailing" secondItem="dhS-w9-Zrv" secondAttribute="trailing" constant="20" id="CnN-hd-OFY"/>
                             <constraint firstItem="dhS-w9-Zrv" firstAttribute="leading" secondItem="uwk-ms-2nL" secondAttribute="trailing" constant="24" id="L37-nm-4c8"/>
                             <constraint firstItem="LwT-vr-tGr" firstAttribute="leading" secondItem="YG0-85-TeH" secondAttribute="leading" constant="50" id="MLN-nS-ZZ7"/>
                             <constraint firstItem="YG0-85-TeH" firstAttribute="bottom" secondItem="dhS-w9-Zrv" secondAttribute="bottom" constant="18" id="Q9F-kf-TOf"/>
+                            <constraint firstItem="Lch-Ay-yHZ" firstAttribute="top" secondItem="YG0-85-TeH" secondAttribute="top" constant="163" id="Tif-Ac-uYe"/>
                             <constraint firstItem="alr-ny-ilV" firstAttribute="leading" secondItem="YG0-85-TeH" secondAttribute="leading" constant="20" id="aNq-Pj-oOB"/>
                             <constraint firstItem="uwk-ms-2nL" firstAttribute="leading" secondItem="alr-ny-ilV" secondAttribute="trailing" constant="24" id="bIG-O1-CLm"/>
                             <constraint firstItem="YG0-85-TeH" firstAttribute="bottom" secondItem="uwk-ms-2nL" secondAttribute="bottom" constant="30" id="c69-32-WCd"/>
                             <constraint firstItem="LwT-vr-tGr" firstAttribute="centerX" secondItem="yKh-Ms-ICh" secondAttribute="centerX" id="dRR-a4-Mpr"/>
                             <constraint firstItem="yKh-Ms-ICh" firstAttribute="top" secondItem="0Yi-H3-vLu" secondAttribute="top" constant="1433" id="edh-yZ-vB1"/>
                             <constraint firstItem="YG0-85-TeH" firstAttribute="bottom" secondItem="alr-ny-ilV" secondAttribute="bottom" constant="18" id="izI-ng-2jo"/>
+                            <constraint firstItem="Lch-Ay-yHZ" firstAttribute="leading" secondItem="YG0-85-TeH" secondAttribute="leading" constant="50" id="jls-W9-Ry2"/>
                             <constraint firstItem="LwT-vr-tGr" firstAttribute="centerY" secondItem="0Yi-H3-vLu" secondAttribute="centerY" id="mzg-Mx-TsD"/>
                             <constraint firstItem="YG0-85-TeH" firstAttribute="trailing" secondItem="LwT-vr-tGr" secondAttribute="trailing" constant="50" id="rRe-gG-UJn"/>
                             <constraint firstItem="yKh-Ms-ICh" firstAttribute="leading" secondItem="0Yi-H3-vLu" secondAttribute="leadingMargin" constant="81" id="uuv-FW-QnZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="play" image="play.circle" catalog="system" id="YYx-7C-sB2"/>
+                    <tabBarItem key="tabBarItem" title="Play" image="play.circle" catalog="system" id="bzx-2n-8OC"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="SoundImage" destination="LwT-vr-tGr" id="KYR-Xb-06A"/>
+                        <outlet property="SoundName" destination="uwk-ms-2nL" id="v1s-Ek-Gfx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5l6-cS-5nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +181,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hL3-m3-5cZ" kind="relationship" relationship="viewControllers" id="cT6-eA-8zX"/>
-                        <segue destination="PAX-Ox-dMQ" kind="relationship" relationship="viewControllers" id="lad-gq-uPn"/>
+                        <segue destination="PAX-Ox-dMQ" kind="relationship" relationship="viewControllers" id="WDq-MZ-T14"/>
                         <segue destination="AF1-AJ-C5o" kind="relationship" relationship="viewControllers" id="fwg-5w-dA6"/>
                     </connections>
                 </tabBarController>
